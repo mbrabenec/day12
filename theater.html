@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<html>
+
+    <body>
+
+        <div id="seats" style="background: yellowgreen; font-size: 5em"></div>
+        
+    </body>
+
+
+
+    <script>
+
+
+
+    // function findSeat() {
+
+    //     const theater = "ABCDEF";
+    //     input = prompt("seat number?");
+    //     let dom = document.getElementById("seats");
+
+    //     if(input.length === 0 || input.length > 2 || isNaN(Number(input))) {
+    //         dom.innerHTML = "ERROR";
+    //         dom.style.background = "red";
+    //         return "invalid input";
+
+    //     }
+
+    //     if (input.length === 1) { return "A" + input; }
+
+    //     let letter = theater.charAt(input.charAt(0));
+    //     let number = input.charAt(1);
+    //     let seats = letter + number;
+
+    //     dom.innerHTML = seats;
+    //     return (seats);
+
+    // }
+
+    
+
+    function findSeat() {
+
+        const theater = "ABCDEF";
+        input = Number(prompt("seat number?"));
+        cols = Number(prompt("seats in row in theater?"));
+        let dom = document.getElementById("seats");
+
+        if(input.length === 0 || input.length > 2 || isNaN(Number(input))) {
+            dom.innerHTML = "ERROR";
+            dom.style.background = "red";
+            return "invalid input";
+        }
+
+        let rowNum = Math.floor(input / cols);
+        let letter = String.fromCharCode(65 + rowNum);
+        let number = input % cols;
+
+        let seats = letter + number;
+
+        dom.innerHTML = seats;
+        return (seats);
+
+}
+
+console.log(findSeat());
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+</html>
