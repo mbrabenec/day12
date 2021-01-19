@@ -120,9 +120,14 @@ function highTemp() {
 
 // SWIMMING
 
-document.querySelector("#swimmer_button").addEventListener("click", winner);
+document.querySelector("#swimmer_button_1").addEventListener("click", winner);
+document.querySelector("#swimmer_button_2").addEventListener("click", winner);
+document.querySelector("#swimmer_button_3").addEventListener("click", winner);
 
-function winner () {
+function winner (e) {
+
+    // console.log(e.currentTarget.id)
+    // console.log(e.target.id)
 
     let nameTimes = [];
     
