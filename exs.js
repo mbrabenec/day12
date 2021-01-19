@@ -127,27 +127,20 @@ function winner () {
     let nameTimes = [];
     
     let names = Array.from(document.querySelectorAll(".swimmer"))
-        .map(e => e.value)
         .forEach(e => {
-            nameTimes.push({"name": e, "time": time()});
+            nameTimes.push(  {"name": e.value, "time": time()}  );
     });
 
-    nameTimes.reduce(a, e => e)
+    nameTimes.sort( (a,b) => a.time - b.time);
 
-    console.log(nameTimes);
+    document.querySelector(".display").style.background = "yellow";
+    document.querySelector(".display").innerHTML = nameTimes[0].name + " was fastest. Time: " + nameTimes[0].time + "s";
 
 }
 
 
-
-
-
-
-
 function time(min = 45, max = 60) {
-
     return Math.floor(Math.random() * (max - min + 1) + min);
-
 }
 
 
@@ -164,7 +157,7 @@ function leapYear () {
     let year = Number(document.querySelector(".year").value);
     let display = document.querySelector(".display")
    
-    if (isLeap(year)) {
+    if (year % 4 === 0 && year % 100 !== 0 || year % 400 === 0) {
         display.style.background = "lightgreen";
         display.innerHTML = year + " is a leap year";
     } else {
@@ -172,12 +165,6 @@ function leapYear () {
         display.innerHTML = year + " not a leap year";
     }
 
-}
-
-function isLeap (year) {
-
-        if (year % 4 === 0 && year % 100 !== 0 || year % 400 === 0 )  return true;
-        return false; 
 }
 
 
