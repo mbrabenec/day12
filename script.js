@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 function check() {
 
     const email = document.querySelector('#email').value;

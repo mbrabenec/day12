@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body {
+            background: white;
+
+        }
+
+        .product, .password {
+            display: flex;
+            flex-flow: column;
+            padding: 2rem;
+            margin: auto;
+            width: 10rem;
+
+        }
+
+        
+
+
+
+        .button {
+            background: lightgray;
+            height: 2rem;
+            margin: 0.5rem 0;
+            border: none;
+            cursor: pointer;
+            
+        }
+
+        .shopping {
+            background-color: lightgreen;
+        }
+
+        .inp_quant::placeholder {
+            color: lightgray;
+        }
+
+        input.inp_quant {
+            text-align: center;
+            height: 2rem;
+
+        }
+
+        .bulb--off {
+            width: 10rem;
+            height: 20rem;
+
+            background-image: url("bulb-off.png");
+            background-size: contain;
+        }
+
+        .bulb--on {
+
+            background-image: url("bulb-on.png");
+
+        }
+
+        .display {
+            padding: 1rem;
+            margin: 1rem 0;
+            height: 2.5rem;
+            background-color: lightgrey;
+
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+    
+
+    <div class="product">
+
+        <div class="bulb bulb--off"></div>
+        <input type="button" class="button_buy" value="BUY">
+        <input type="text" class="inp_quant" placeholder="Update quantity" value="1">
+    
+    </div>
+
+    <div class="password">
+
+        <label for="">Password then enter:</label>
+        
+        <input type="text" class="inp_password" placeholder="password">
+
+        <div class="display"></div>
+        
+    
+    </div>
+
+
+    
+
+
+
+    <script src="dompract.js"></script>
+</body>
+</html>
